@@ -89,6 +89,8 @@ func main() {
 
 ## Channel
 
-Channel is a communication object using a goroutine
+> Channels are the pipes that connect concurrent goroutines. You can send values into channels from one goroutine and receive those values into another goroutine.
+
+> Channel is a communication object using a goroutine
 
 [Channel Article](https://go101.org/article/channel.html)

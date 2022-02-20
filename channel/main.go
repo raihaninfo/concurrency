@@ -15,7 +15,6 @@ func DoWork() int {
 // another syntax
 func main() {
 	dataChan := make(chan int)
-
 	go func() {
 		wg := sync.WaitGroup{}
 		for i := 0; i < 100; i++ {
