@@ -2,18 +2,25 @@ package main
 
 import (
 	"fmt"
+	"sync"
 	"time"
 )
 
 func main() {
-	go count("sheep")
-	go count("fish")
-	time.Sleep(time.Second * 2)
+	var wg sync.WaitGroup
+	wg.Add(1)
+	go func() {
+		count("sheep")
+		wg.Done()
+	}()
+	wg.Wait()
+
 }
 
 func count(thing string) {
-	for i := 0; true; i++ {
+	for i := 0; i <= 5; i++ {
 		fmt.Println(i, thing)
 		time.Sleep(time.Millisecond * 500)
 	}
+
 }
