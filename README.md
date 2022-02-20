@@ -86,3 +86,9 @@ func main() {
     PrintName("John", "Doe")
 }
 ```
+
+## Channel
+
+Channel is a communication object using a goroutine
+
+https://go101.org/article/channel.html
