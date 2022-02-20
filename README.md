@@ -1,6 +1,8 @@
 # concurrency
 
-concurrency is the ability of different parts or units of a program, algorithm, or problem to be executed out-of-order or at the same time simultaneously partial order,
+> concurrency is the ability of different parts or units of a program, algorithm, or problem to be executed out-of-order or at the same time simultaneously partial order,
+
+> Concurrency is when a large task is split into smaller sub-tasks and run at the same time. This post provides an outline of how Go handles concurrency.
 
 ```go
 package main
@@ -49,3 +51,8 @@ func count(thing string) {
 }
 
 ```
+## Goroutines
+> Goroutines are an integral part of Go. They are the units of execution inside a Go program. The main function is also another goroutine. They all have very small stack sizes, which allows spawning millions of them at the same time. They are extremely lightweight.
+
+https://golangdocs.com/goroutines-in-golang
+

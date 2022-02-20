@@ -7,7 +7,8 @@ import (
 
 func main() {
 	go count("sheep")
-	count("fish")
+	go count("fish")
+	time.Sleep(time.Second * 2)
 }
 
 func count(thing string) {
