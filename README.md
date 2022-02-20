@@ -51,8 +51,38 @@ func count(thing string) {
 }
 
 ```
+
 ## Goroutines
+
 > Goroutines are an integral part of Go. They are the units of execution inside a Go program. The main function is also another goroutine. They all have very small stack sizes, which allows spawning millions of them at the same time. They are extremely lightweight.
 
 https://golangdocs.com/goroutines-in-golang
 
+## Anonymous goroutines
+
+Go has support for anonymous functions. `Goroutines` can be anonymous as well. Here is an example of an anonymous goroutine.
+
+```go
+package main
+
+import (
+    "fmt"
+    "time"
+)
+
+func PrintName(f string, l string) {
+    fmt.Println(f, l)
+}
+
+func main() {
+    var i int
+    go func() {
+        for i = 0; i < 7; i++ {
+            fmt.Print(i, " ")
+            time.Sleep(100 * time.Millisecond)
+        }
+    }()
+    time.Sleep(1 * time.Second)
+    PrintName("John", "Doe")
+}
+```
