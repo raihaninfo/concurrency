@@ -91,4 +91,4 @@ func main() {
 
 Channel is a communication object using a goroutine
 
-https://go101.org/article/channel.html
+[Channel Article](https://go101.org/article/channel.html)
