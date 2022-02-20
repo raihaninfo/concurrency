@@ -1,15 +1,32 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"math/rand"
+	"sync"
+	"time"
+)
+
+func DoWork() int {
+	time.Sleep(time.Second)
+	return rand.Intn(100)
+}
 
 // another syntax
 func main() {
 	dataChan := make(chan int)
 
 	go func() {
+		wg := sync.WaitGroup{}
 		for i := 0; i < 100; i++ {
-			dataChan <- i
+			wg.Add(1)
+			go func() {
+				defer wg.Done()
+				result := DoWork()
+				dataChan <- result
+			}()
 		}
+		wg.Wait()
 		close(dataChan)
 	}()
 
