@@ -7,11 +7,12 @@ const (
 	ReqSpellCheck = iota
 	ReqSearch     = iota
 )
+
 const ReqDataSize = 1 * 1024
 
 type (
 	ClientReq struct {
-		Id      uint
+		ID      uint
 		ReqType int
 		Data    [ReqDataSize]byte
 		Size    int

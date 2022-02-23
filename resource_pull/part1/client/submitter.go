@@ -1,9 +1,9 @@
 package main
 
 import (
+	"concurrency/resource_pull/part1/ex/model"
 	"fmt"
 	"math/rand"
-	"thread-pool/model"
 
 	"time"
 )
