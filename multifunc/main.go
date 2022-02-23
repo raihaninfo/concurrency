@@ -6,7 +6,9 @@ import (
 	"time"
 )
 
-func generateNumbers(total int, wg *sync.WaitGroup) {
+var wg sync.WaitGroup
+
+func generateNumbers(total int) {
 	defer wg.Done()
 	for idx := 1; idx <= total; idx++ {
 		fmt.Printf("Generating number %d\n", idx)
@@ -14,7 +16,7 @@ func generateNumbers(total int, wg *sync.WaitGroup) {
 	}
 }
 
-func printNumbers(wg *sync.WaitGroup) {
+func printNumbers() {
 	defer wg.Done()
 
 	for idx := 1; idx <= 10; idx++ {
@@ -24,11 +26,10 @@ func printNumbers(wg *sync.WaitGroup) {
 }
 
 func main() {
-	var wg sync.WaitGroup
 
 	wg.Add(2)
-	go printNumbers(&wg)
-	go generateNumbers(10, &wg)
+	go printNumbers()
+	go generateNumbers(10)
 
 	fmt.Println("Waiting for goroutines to finish...")
 	wg.Wait()
