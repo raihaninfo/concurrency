@@ -1,7 +1,7 @@
 package main
 
 import (
-	"concurrency/resource_pull/part1/model"
+	"concurrency/resource_pull/part1/ex_2/model"
 	"fmt"
 	"math/rand"
 	"time"
