@@ -8,7 +8,7 @@ import (
 )
 
 func main() {
-	srv := newTCPServer("8080")
+	srv := newTCPServer("8081")
 	err := srv.Start()
 	if err != nil {
 		log.Error("Failed to start TCPServer", err)

@@ -3,7 +3,7 @@ package main
 import "flag"
 
 var (
-	defaultServer = "http://localhost:8080"
+	defaultServer = "http://localhost:8081"
 )
 
 func main() {

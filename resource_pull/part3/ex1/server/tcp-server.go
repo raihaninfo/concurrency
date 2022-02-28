@@ -67,7 +67,6 @@ func (srv *TCPServer) Stop() {
 	}
 
 	srv.log.Info("Stopping HTTP server")
-	// TODO - stop http server
 	srv.s.Close()
 
 	srv.log.Info("Messages processed:", srv.numReqs)
