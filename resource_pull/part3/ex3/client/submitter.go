@@ -50,7 +50,7 @@ func submitRequests(url string) {
 			defer resp.Body.Close()
 		}
 		// // pause a bit between batches
-		// time.Sleep(time.Duration(r.Intn(200)) * time.Millisecond)
+		time.Sleep(time.Duration(r.Intn(200)) * time.Millisecond)
 	}
 }
 
