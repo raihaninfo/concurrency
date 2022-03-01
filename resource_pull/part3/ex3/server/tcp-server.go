@@ -80,7 +80,6 @@ func (srv *TCPServer) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 		defer r.Body.Close()
 		msg := rp.Alloc()
 		dec.Decode(msg)
-		// INFO - pretent we do some work on with the msg
 		time.Sleep(10 * time.Millisecond)
 		rp.Release(msg)
 	}()
