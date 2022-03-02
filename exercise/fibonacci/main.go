@@ -1,3 +1,4 @@
+// fibonacci algorithm
 package main
 
 import "fmt"
